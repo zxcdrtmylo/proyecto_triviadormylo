@@ -9,6 +9,6 @@ class preguntas(models.Model):
 		return "->%s "%(self.nombre)
 class comentarios(models.Model):
 	contenido=models.TextField()
-	fecha=models.DateField(auto_now=ture)
+	fecha=models.DateField(auto_now=True)
 	email=models.EmailField()
 	usuario=models.ForeignKey(User)

@@ -6,7 +6,7 @@ from .forms import *
 from .models import *
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
-from django.contrib..auth import login,logout,authenticate
+from django.contrib.auth import login,logout,authenticate
 import pdb
 
 def preguntas(request):
@@ -48,12 +48,12 @@ def pagina_principal(request):
 		if(form.is_valid()):
 			form.save()
 	fecha=datetime.datetime.now()
-	return render_to_response("Inicio/principal.hmtl",{"fecha":fecha},RequestContext(request))
+	return render_to_response("Inicio/principal.html",{"fecha":fecha},RequestContext(request))
 def pagina_comentarios(request):
 	if request.method=="POST":
 		form=comentarios(request.POST)
 		if(form.is_valid()):
 			form.save()
-	return render_to_response("Inicio/comentarios.html".{"comentarios":comentarios()},RequestContext(request))
+	return render_to_response("Inicio/comentarios.html",{"comentarios":comentarios()},RequestContext(request))
 
 	

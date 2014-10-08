@@ -1,0 +1,33 @@
+body{
+	font-family:Verdana;
+	font-size:12px;
+}
+#menu{
+	width:800px;
+}
+#menu li{
+	display:inline-block;
+	vertical-align:right;
+	padding:5px;
+	background-color:#000;
+	color:#fff;
+	margin-left:5px;
+	border-radius:5px;
+}
+#menu li a{
+	color:#fff;
+	text-decoration:none;
+}
+.articulos li{
+	background-color:#fff;
+	color:#000;
+	list-style:none;
+	border:1px solid #000;
+	padding:10px;
+}
+#comentarios li{
+	margin-top:20px;
+	padding:20px;
+	background-color:#333;
+	color:#fff;
+}
