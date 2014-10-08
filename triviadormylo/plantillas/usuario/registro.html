@@ -2,7 +2,14 @@
 {%block container%}
 <h1>Registro</h1>
 <form action="" method="post">
-	{{for.as_ul}}
+	<label>Nombre</label>
+	<input type="text" name="nombre">
+	<label>Pais</label>
+	<input type="text" name="pais">
+	<label>Descripcion</label>
+	<textarea name="descripcion" cols="00" rows="5"></textarea>
+	<label>Foto</label>
+	<input type="file" name"foto">
 	<input type="submit" value="Enviar">
 </form>
 {%endblock%}
