@@ -85,3 +85,4 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 TEMPLATE_DIRS = (os.path.join(RUTA_PROYECTO,"plantillas"),)
 STATICFILES_DIRS = (os.path.join(RUTA_PROYECTO,"static"),)
+MEDIA_ROOT=os.path.join(RUTA_PROYECTO,'media')

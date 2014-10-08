@@ -9,5 +9,6 @@ urlpatterns = patterns('',
 	url(r'^login/$', login_usuario),
 	url(r'^logout/$', logout_usuario),
 	url(r'^perfil/$', perfil),
+	url(r'^perfil/add/$', perfil_view),
 	url(r'^preguntas/$', preguntas),
 )
