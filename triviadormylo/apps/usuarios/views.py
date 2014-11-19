@@ -28,6 +28,29 @@ def registro_usuarios(request):
 	else:
 		form=fusuario()
 	return render_to_response("usuario/registro.html",{"form":form},RequestContext(request))
+def pagina_principal(request):
+	if request.method=="POST":
+		form=AuthenticationForm(request.POST)
+		if(form.is_valid()==False):
+			username=request.POST["username"]
+			password=request.POST["password"]
+			resultado=authenticate(username=username,password=password)
+			if resultado:
+				login(request,resultado)
+				request.session["name"]=username
+				return HttpResponseRedirect("/Inicio/perfil/")
+	form=AuthenticationForm()
+	if request.method=="POST":
+		form1=fusuario(request.POST)
+		if(form1.is_valid()):
+			nuevo_usuario=request.POST['username']
+			form1.save()
+			usuario=User.objects.get(username=nuevo_usuario)
+			p=Perfil.objects.create(user=usuario)
+			return HttpResponseRedirect("/Inicio/")
+	else:
+		form1=fusuario()
+	return render_to_response("Inicio/principal.html",{"form":form,"form1":form1},RequestContext(request))
 def login_usuario(request):
 	if request.method=="POST":
 		form=AuthenticationForm(request.POST)
@@ -46,13 +69,6 @@ def perfil(request):
 def logout_usuario(request):
 	logout(request)
 	return HttpResponseRedirect("/Inicio/")
-def pagina_principal(request):
-	if request.method=="POST":
-		form=comentarios(request.POST)
-		if(form.is_valid()):
-			form.save()
-	fecha=datetime.datetime.now()
-	return render_to_response("Inicio/principal.html",{"fecha":fecha},RequestContext(request))
 def pagina_comentarios(request):
 	if request.method=="POST":
 		form=comentarios(request.POST)
@@ -73,6 +89,3 @@ def perfil_view(request):
 		return render_to_response("usuario/perfil_add.html",{"form":form},RequestContext(request))
 	else:
 		return HttpResponseRedirect("/login/")
-
-
-	

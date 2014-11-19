@@ -1,7 +1,11 @@
 body{
 	margin: 0px;
 	padding: 0px;
+	background-image: url("../media/background.jpg");
+	background-repeat: no-repeat;
+  	background-position: 50% 0%;
 	background-color: rgba(10, 10, 10, 0.9);
+	color: red;
 }
 #cabecera{
 	margin: auto;
@@ -9,6 +13,7 @@ body{
 	height:60px;
 	display: block;
 	max-width: 900px;
+	background-image: url("../media/baner.jpg");
 	background-color: rgba(0,0,0,0.9);
 }
 #menu li{
@@ -17,7 +22,7 @@ body{
 	font-size: 25px;
 	background-color: rgba(45,45,45,0.9);
 	display:inline-block;
-	color: rgba(255,255,255,0.9);
+	color: red;
 	border-radius:1px;
 	margin-top: 10px;
 	margin-left: 20px;

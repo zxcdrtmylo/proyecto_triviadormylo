@@ -36,3 +36,6 @@ class fusuario(UserCreationForm):
 		if commit:
 			user.save()
 		return user
+
+class login(UserCreationForm):
+	
